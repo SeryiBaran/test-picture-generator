@@ -46,7 +46,7 @@ function generatePattern(workspace, width, height) {
 			ctx.stroke();
 		}
 
-		ctx.font = Math.floor(height / 4) + "px sans-serif";
+		ctx.font = Math.min(Math.floor(height / 4), Math.floor(width / 6)) + "px sans-serif";
 		ctx.fillStyle = "white";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "middle";
