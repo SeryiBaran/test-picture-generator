@@ -18,6 +18,10 @@ form, footer {
 }
 
 canvas {
+	max-width: 100%;
+}
+
+#workspace.antialiasing_disabled canvas {
 	image-rendering: pixelated; image-rendering: crisp-edges;
 }
 

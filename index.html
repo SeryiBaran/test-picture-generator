@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Display test picture generator</title>
 	<script src="./jquery-3.7.1.min.js"></script>
+	<script src="./bresenham.js"></script>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -14,7 +15,7 @@
 
 	<form action="#">
 		<p class="config">
-			<select id="standard_resolutions" placeholder="---">
+			<select id="standard_resolutions">
 				<option value="" disabled selected>Select resolution</option>
 			</select>
 			<label class="width_label" for="width">Width: </label>
@@ -39,7 +40,10 @@
 			</p>
 			<p class="advanced_checkboxes">
 				<label><input type="checkbox" name="only_geometry_mode_check" id="only_geometry_mode_check" /> Only geometry</label>
-				<label><input type="checkbox" name="disable_antialiasing_check" id="disable_antialiasing_check" /> Disable antialiasing (VERY LAGGY!)</label>
+				<label><input type="checkbox" name="disable_colors_check" id="disable_colors_check" /> Disable colors</label>
+				<label><input type="checkbox" name="use_bresenham_algorithms_check" id="use_bresenham_algorithms_check" /> Use Bresenham algorithms</label>
+				<label><input type="checkbox" name="disable_antialiasing_check" id="disable_antialiasing_check" /> Disable displaying antialiasing</label>
+				<label><input type="checkbox" name="enable_antialiasing_disable_filter_check" id="enable_antialiasing_disable_filter_check" /> Enable antialiasing disabling filter (VERY LAGGY!)</label>
 				<label><input type="checkbox" name="slider_advanced_check" id="slider_advanced_check" /> Advanced sliders</label>
 				<label><input type="checkbox" name="slider_advanced_autogen_check" id="slider_advanced_autogen_check" /> Autogenerate by sliders move</label>
 			</p>
@@ -51,7 +55,7 @@
 	</div>
 
 	<footer>
-		<p class="credits">Written by <a href="https://github.com/fknipp/test-picture-generator/">fknipp</a> and <a href="https://seryibaran.github.io">SeryiBaran</a>.</p>
+		<p class="credits">Written by <a href="https://github.com/fknipp/test-picture-generator/">fknipp</a> and <a href="https://github.com/SeryiBaran/test-picture-generator/">SeryiBaran</a>.</p>
 	</footer>
 
 	<script src="js/main.js"></script>
