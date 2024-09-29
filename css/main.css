@@ -1,8 +1,86 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: MintCream;
 	text-align: center;
 }
 
-form, #workspace {
+form, #workspace, footer {
 	margin: 30px;
+}
+
+form, footer {
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+canvas {
+	image-rendering: pixelated; image-rendering: crisp-edges;
+}
+
+.config {
+	text-align: start;
+	max-width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	gap: 4px 4px;
+	grid-template-areas:
+		"standard_resolutions standard_resolutions"
+		"width_label width_input"
+		"height_label height_input"
+		"generate generate"
+		"generate_current_resolution quick_test"
+		"download download"
+		"go_fullscreen go_fullscreen";
+}
+
+#standard_resolutions { grid-area: standard_resolutions; }
+.width_label { grid-area: width_label; }
+.width_input { grid-area: width_input; }
+.height_label { grid-area: height_label; }
+.height_input { grid-area: height_input; }
+#generate { grid-area: generate; }
+#generate_current_resolution { grid-area: generate_current_resolution; }
+#quick_test { grid-area: quick_test; }
+#download { grid-area: download; }
+#go_fullscreen { grid-area: go_fullscreen; }
+
+.advanced_checkboxes {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: max-content;
+	text-align: start;
+}
+
+.button {
+	display: inline-block;
+	border: 1px solid #444;
+	border-radius: 2px;
+	background-color: #F0F0F0;
+	padding: 0.6em 1em;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.button:hover {
+	background-color: #FAFAFA;
+}
+
+.button:active {
+	background-color: #E6E6E6;
+}
+
+.credits {
+	font-size: 0.9em;
 }
