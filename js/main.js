@@ -273,7 +273,14 @@ $("#download").on("click", function() {
 	var canvas = $("canvas")[0];
 	var image = canvas.toDataURL("image/png");
 	this.href = image;
-	this.download = "fknipp_edited_" + canvas.width + "x" + canvas.height + ".png";
+	this.download =
+		"fknipp" +
+		(only_geometry_mode ? "_GEOM" : "") +
+		(disable_colors ? "_NC" : "") +
+		(use_bresenham_algorithms ? "_BRSALG" : "") +
+		(enable_antialiasing_disable_filter ? "_ENANDISFILTER" : "") +
+		`_${canvas.width}x${canvas.height}` +
+		".png";
 });
 
 $("#go_fullscreen").on("click", function() {
