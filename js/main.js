@@ -55,22 +55,20 @@ $("#only_geometry_mode_check").on("input", function () {
 })
 
 $("#slider_advanced_check").on("input", function () {
-	$("#slider_width").attr({
+	$("#slider_width, #slider_height").attr({
 		"min": this.checked ? 1 : 100,
-		"max": this.checked ? 4000 : 1920,
 		"style": this.checked ? "width: 500px;" : "width: 300px;",
 	})
+	$("#slider_width").attr({
+		"max": this.checked ? 4000 : 1920,
+	})
 	$("#slider_height").attr({
-		"min": this.checked ? 1 : 100,
 		"max": this.checked ? 3000 : 1080,
-		"style": this.checked ? "width: 500px;" : "width: 300px;",
 	})
 })
 
 $("#advanced_check").on("input", function () {
-	$("#advanced").attr({
-		"style": this.checked ? "" : "display: none;",
-	})
+	$("#advanced").toggle(this.checked)
 })
 
 $("#slider_width, #slider_height").on("input", function () {
