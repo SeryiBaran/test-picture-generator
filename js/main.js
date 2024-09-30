@@ -16,6 +16,13 @@ $("#slider_advanced_autogen_check").on("input", function () {
 	slider_advanced_autogen_checked = this.checked;
 })
 
+var disable_maxwidth = $("#disable_maxwidth_check").is(":checked");
+$("#disable_maxwidth_check").on("input", function () {
+	disable_maxwidth = this.checked;
+
+	$("#workspace").toggleClass('maxwidth_disabled', disable_maxwidth);
+})
+
 var disable_colors = $("#disable_colors_check").is(":checked");
 $("#disable_colors_check").on("input", function () {
 	disable_colors = this.checked;

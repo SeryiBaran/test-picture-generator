@@ -17,12 +17,12 @@ form, footer {
 	margin-right: auto;
 }
 
-canvas {
-	max-width: 100%;
-}
-
 #workspace.antialiasing_disabled canvas {
 	image-rendering: pixelated; image-rendering: crisp-edges;
+}
+
+#workspace:not(.maxwidth_disabled) canvas {
+	max-width: 100%;
 }
 
 .config {
