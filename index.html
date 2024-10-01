@@ -1,64 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Display test picture generator</title>
-	<script src="./js/jquery-3.7.1.min.js"></script>
-	<script src="./js/bresenham.js"></script>
-	<link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display test picture generator</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bresenham.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <h1>Display test picture generator</h1>
 
-	<h1>Display test picture generator</h1>
+    <p>This tool generates simple picture for testing display with JavaScript Canvas.</p>
 
-	<p>This tool generates simple picture for testing display with JavaScript & JQuery.</p>
+    <form action="#">
+      <p class="config">
+        <select id="standard_resolutions">
+          <option value="" disabled selected>Select resolution</option>
+        </select>
+        <label class="width_label" for="width">Width: </label>
+        <input class="width_input" type="text" id="width" value="400" />
+        <label class="height_label" for="height">Height: </label>
+        <input class="height_input" type="text" id="height" value="300" />
+        <button class="button" id="generate">Generate</button>
+        <button class="button" id="generate_current_resolution">MAKE FOR MY DISPLAY!</button>
+        <button class="button" id="quick_test">Quick test</button>
+        <a class="button" id="download" href="#">Download picture (PNG)</a>
+        <button class="button" id="go_fullscreen">Open fullscreen</button>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" name="advanced_check" id="advanced_check" />
+          Advanced settings
+        </label>
+      </p>
+      <div id="advanced" style="display: none">
+        <p>
+          <label>
+            Width:
+            <input
+              type="range"
+              id="slider_width"
+              min="100"
+              max="1920"
+              value="400"
+              style="width: 300px"
+            />
+          </label>
+        </p>
+        <p>
+          <label>
+            Height:
+            <input
+              type="range"
+              id="slider_height"
+              min="100"
+              max="1080"
+              value="300"
+              style="width: 300px"
+            />
+          </label>
+        </p>
+        <p class="advanced_checkboxes">
+          <label>
+            <input type="checkbox" name="disable_maxwidth_check" id="disable_maxwidth_check" />
+            Disable max-width
+          </label>
+          <label>
+            <input type="checkbox" name="only_geometry_mode_check" id="only_geometry_mode_check" />
+            Only geometry
+          </label>
+          <label>
+            <input type="checkbox" name="disable_colors_check" id="disable_colors_check" />
+            Disable colors
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="use_bresenham_algorithms_check"
+              id="use_bresenham_algorithms_check"
+            />
+            Use Bresenham algorithms
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="disable_antialiasing_check"
+              id="disable_antialiasing_check"
+            />
+            Disable displaying antialiasing
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="enable_antialiasing_disable_filter_check"
+              id="enable_antialiasing_disable_filter_check"
+            />
+            Enable antialiasing disabling filter (VERY LAGGY!)
+          </label>
+          <label>
+            <input type="checkbox" name="slider_advanced_check" id="slider_advanced_check" />
+            Advanced sliders
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="slider_advanced_autogen_check"
+              id="slider_advanced_autogen_check"
+            />
+            Autogenerate by sliders move
+          </label>
+        </p>
+      </div>
+      <hr />
+    </form>
 
-	<form action="#">
-		<p class="config">
-			<select id="standard_resolutions">
-				<option value="" disabled selected>Select resolution</option>
-			</select>
-			<label class="width_label" for="width">Width: </label>
-			<input class="width_input" type="text" id="width" value="400">
-			<label class="height_label" for="height">Height: </label>
-			<input class="height_input" type="text" id="height" value="300">
-			<button class="button" id="generate">Generate</button>
-			<button class="button" id="generate_current_resolution">MAKE FOR MY DISPLAY!</button>
-			<button class="button" id="quick_test">Quick test</button>
-			<a class="button" id="download" href="#">Download picture (PNG)</a>
-			<button class="button" id="go_fullscreen">Open fullscreen</button>
-		</p>
-		<p>
-			<label><input type="checkbox" name="advanced_check" id="advanced_check" /> Advanced settings</label>
-		</p>
-		<div id="advanced" style="display: none;">
-			<p>
-				<label>Width: <input type="range" id="slider_width" min="100" max="1920" value="400" style="width: 300px;"></label>
-			</p>
-			<p>
-				<label>Height: <input type="range" id="slider_height" min="100" max="1080" value="300" style="width: 300px;"></label>
-			</p>
-			<p class="advanced_checkboxes">
-				<label><input type="checkbox" name="disable_maxwidth_check" id="disable_maxwidth_check" /> Disable max-width</label>
-				<label><input type="checkbox" name="only_geometry_mode_check" id="only_geometry_mode_check" /> Only geometry</label>
-				<label><input type="checkbox" name="disable_colors_check" id="disable_colors_check" /> Disable colors</label>
-				<label><input type="checkbox" name="use_bresenham_algorithms_check" id="use_bresenham_algorithms_check" /> Use Bresenham algorithms</label>
-				<label><input type="checkbox" name="disable_antialiasing_check" id="disable_antialiasing_check" /> Disable displaying antialiasing</label>
-				<label><input type="checkbox" name="enable_antialiasing_disable_filter_check" id="enable_antialiasing_disable_filter_check" /> Enable antialiasing disabling filter (VERY LAGGY!)</label>
-				<label><input type="checkbox" name="slider_advanced_check" id="slider_advanced_check" /> Advanced sliders</label>
-				<label><input type="checkbox" name="slider_advanced_autogen_check" id="slider_advanced_autogen_check" /> Autogenerate by sliders move</label>
-			</p>
-		</div>
-		<hr />
-	</form>
+    <div id="workspace"></div>
 
-	<div id="workspace">
-	</div>
+    <footer>
+      <p class="credits">
+        Written by <a href="https://github.com/fknipp/test-picture-generator/">fknipp</a> and
+        <a href="https://github.com/SeryiBaran/test-picture-generator/">SeryiBaran</a>.
+      </p>
+    </footer>
 
-	<footer>
-		<p class="credits">Written by <a href="https://github.com/fknipp/test-picture-generator/">fknipp</a> and <a href="https://github.com/SeryiBaran/test-picture-generator/">SeryiBaran</a>.</p>
-	</footer>
-
-	<script src="./js/main.js"></script>
-</body>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
