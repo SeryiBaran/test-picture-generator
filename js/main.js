@@ -74,6 +74,15 @@ $("#slider_advanced_check").on("input", function () {
   });
 });
 
+let inputs_autogen_checked = $("#inputs_autogen_check").is(":checked");
+$("#inputs_autogen_check").on("input", function () {
+  inputs_autogen_checked = this.checked;
+});
+
+$("#width, #height").on("input", function () {
+  if (inputs_autogen_checked) generate();
+});
+
 $("#advanced_check").on("input", function () {
   $("#advanced").toggle(this.checked);
 });
@@ -178,25 +187,71 @@ function generatePattern(workspace, width_prop, height_prop) {
     // Grid
     ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#808080";
 
-    let offsetx = Math.floor((width % 20) / 2) + 0.5;
-    for (let x = offsetx; x < width; x += 20) {
+    let offsetx = Math.floor((width % 40) / 2) + 0.5;
+    for (let x = offsetx; x < width; x += 40) {
       ctx.beginPath();
       ctx.moveTo(x, 0);
       ctx.lineTo(x, height);
       ctx.stroke();
     }
-    let offsety = Math.floor((height % 20) / 2) + 0.5;
-    for (let y = offsety; y < height; y += 20) {
+    let offsety = Math.floor((height % 40) / 2) + 0.5;
+    for (let y = offsety; y < height; y += 40) {
       ctx.beginPath();
       ctx.moveTo(0, y);
       ctx.lineTo(width, y);
       ctx.stroke();
     }
 
+    // Crossed lines
+    if (use_bresenham_algorithms) {
+      // Non-standard pixelated algorithm
+      ctx.fillStyle = disable_colors ? "#FFFFFF" : "fuchsia";
+      plotLine(0, 0, width, height);
+
+      ctx.fillStyle = disable_colors ? "#FFFFFF" : "fuchsia";
+      plotLine(width, 0, 0, height);
+    } else {
+      // Standard canvas antialiased algorithm
+      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "fuchsia";
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(width, height);
+      ctx.stroke();
+
+      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "fuchsia";
+      ctx.beginPath();
+      ctx.moveTo(width, 0);
+      ctx.lineTo(0, height);
+      ctx.stroke();
+    }
+
+    // Gap side border
+    const second_side_border_gap = Math.floor(Math.min(width, height) / 8);
+    ctx.strokeStyle = disable_colors ? "#FFFFFF" : "fuchsia";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(
+      second_side_border_gap + 0.5,
+      second_side_border_gap + 0.5,
+      width - second_side_border_gap * 2,
+      height - second_side_border_gap * 2,
+    );
+
+    // 2 center rects
+    if (!only_geometry_mode) {
+      let centerRect2Size = 2;
+      ctx.fillStyle = "white";
+      ctx.fillRect(
+        Math.floor(width / 2) - centerRect2Size / 2,
+        Math.floor(height / 2) - centerRect2Size / 2,
+        centerRect2Size,
+        centerRect2Size,
+      );
+    }
+
     // Circles
     if (use_bresenham_algorithms) {
       // Non-standard pixelated algorithm
-      ctx.fillStyle = disable_colors ? "#FFFFFF" : "#C0C0C0";
+      ctx.fillStyle = disable_colors ? "#FFFFFF" : "aqua";
 
       let radius_step = Math.floor(Math.min(width, height) / 40) * 4;
       for (let i = 1; i <= 4; i++) {
@@ -204,7 +259,7 @@ function generatePattern(workspace, width_prop, height_prop) {
       }
     } else {
       // Standard canvas antialiased algorithm
-      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#C0C0C0";
+      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "aqua";
 
       let radius_step = Math.floor(Math.min(width, height) / 40) * 4;
       for (let i = 1; i <= 4; i++) {
@@ -220,59 +275,29 @@ function generatePattern(workspace, width_prop, height_prop) {
       }
     }
 
-    // Crossed lines
-    if (use_bresenham_algorithms) {
-      // Non-standard pixelated algorithm
-      ctx.fillStyle = disable_colors ? "#FFFFFF" : "#008080";
-      plotLine(0, 0, width, height);
-
-      ctx.fillStyle = disable_colors ? "#FFFFFF" : "#008080";
-      plotLine(width, 0, 0, height);
-    } else {
-      // Standard canvas antialiased algorithm
-      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#008080";
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(width, height);
-      ctx.stroke();
-
-      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#008080";
-      ctx.beginPath();
-      ctx.moveTo(width, 0);
-      ctx.lineTo(0, height);
-      ctx.stroke();
-    }
-
     // Side border
-    ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#008080";
+    ctx.strokeStyle = disable_colors ? "#FFFFFF" : "fuchsia";
     ctx.lineWidth = 1;
     ctx.strokeRect(0.5, 0.5, width - 1, height - 1);
 
-    // 8px from side border
-    ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#008080";
-    ctx.lineWidth = 1;
-    ctx.strokeRect(8 + 0.5, 8 + 0.5, width - 16, height - 16);
+    flip(function () {
+      const radius = second_side_border_gap;
+      if (use_bresenham_algorithms) {
+        ctx.fillStyle = disable_colors ? "#FFFFFF" : "aqua";
 
-    // 2 center rects
-    if (!only_geometry_mode) {
-      let centerRectSize = 4;
-      ctx.fillStyle = disable_colors ? "#FFFFFF" : "#008080";
-      ctx.fillRect(
-        Math.floor(width / 2) - centerRectSize / 2,
-        Math.floor(height / 2) - centerRectSize / 2,
-        centerRectSize,
-        centerRectSize,
-      );
+        plotCircle(radius, radius, radius);
+        plotCircle(width - radius - 1, radius, radius);
+      } else {
+        ctx.strokeStyle = disable_colors ? "#FFFFFF" : "aqua";
 
-      let centerRect2Size = 2;
-      ctx.fillStyle = "#FFFFFF";
-      ctx.fillRect(
-        Math.floor(width / 2) - centerRect2Size / 2,
-        Math.floor(height / 2) - centerRect2Size / 2,
-        centerRect2Size,
-        centerRect2Size,
-      );
-    }
+        ctx.beginPath();
+        ctx.arc(radius + 0.5, radius + 0.5, radius, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(width - radius - 1 + 0.5, radius + 0.5, radius, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+    });
 
     // Center big size text
     if (!only_geometry_mode) {
@@ -298,9 +323,9 @@ function generatePattern(workspace, width_prop, height_prop) {
         flip(() => {
           ctx.font = 11 + "px Consolas";
           ctx.fillStyle = "white";
-          ctx.textAlign = "left";
+          ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.fillText(width + "×" + height, 12, 18);
+          ctx.fillText(width + "×" + height, width / 2, Math.floor(second_side_border_gap / 2));
         });
       }
     }

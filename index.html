@@ -18,9 +18,9 @@
           <option value="" disabled selected>Select resolution</option>
         </select>
         <label class="width_label" for="width">Width: </label>
-        <input class="width_input" type="text" id="width" value="400" />
+        <input class="width_input" type="number" id="width" value="400" />
         <label class="height_label" for="height">Height: </label>
-        <input class="height_input" type="text" id="height" value="300" />
+        <input class="height_input" type="number" id="height" value="300" />
         <button class="button" id="generate">Generate</button>
         <button class="button" id="generate_current_resolution">MAKE FOR MY DISPLAY!</button>
         <button class="button" id="quick_test">Quick test</button>
@@ -108,6 +108,14 @@
               id="slider_advanced_autogen_check"
             />
             Autogenerate by sliders move
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="inputs_autogen_check"
+              id="inputs_autogen_check"
+            />
+            Autogenerate by inputs (CAN FUCK PC BECAUSE TYPING ERRORS!)
           </label>
         </p>
       </div>
