@@ -315,6 +315,12 @@ $("#select_autogen_check").on("input", function () {
   select_autogen_checked = this.checked;
 });
 
+let show_site_name = $("#show_site_name_check").is(":checked");
+$("#show_site_name_check").on("input", function () {
+  show_site_name = this.checked;
+  generate();
+});
+
 $("#width, #height").on("input", function () {
   if (inputs_autogen_checked) generate();
 });
@@ -567,16 +573,27 @@ function generatePattern(workspace, width_prop, height_prop) {
         });
       }
     }
+
+    if (show_site_name) {
+      if (!(width < 100 || height < 350)) {
+        const img = new Image();
+        img.src = "./sitename.png";
+        img.onload = () => {
+          ctx.drawImage(img, Math.floor(width / 2 - img.width / 2), 4);
+        };
+      }
+    }
   }
 }
 
 function generateFileName(width, height) {
   return (
     "fknipp" +
-    (only_geometry_mode ? "_GEOM" : "") +
+    (only_geometry_mode ? "_GM" : "") +
     (disable_colors ? "_NC" : "") +
-    (use_bresenham_algorithms ? "_BRSALG" : "") +
-    (enable_antialiasing_disable_filter ? "_ENANDISFILTER" : "") +
+    (use_bresenham_algorithms ? "_BRSLG" : "") +
+    (enable_antialiasing_disable_filter ? "_ENANDISFLTR" : "") +
+    (show_site_name ? "_WTRMRK" : "") +
     `_${width}x${height}` +
     ".png"
   );
