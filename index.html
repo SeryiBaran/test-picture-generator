@@ -69,6 +69,14 @@
         </p>
         <p class="advanced_checkboxes">
           <label>
+            <input type="checkbox" name="disable_grid_check" id="disable_grid_check" />
+            Disable grid
+          </label>
+          <label>
+            <input type="checkbox" name="limited_grid_check" id="limited_grid_check" />
+            Limited grid
+          </label>
+          <label>
             <input type="checkbox" name="disable_maxwidth_check" id="disable_maxwidth_check" />
             Disable max-width
           </label>
@@ -124,6 +132,10 @@
             <input type="checkbox" name="select_autogen_check" id="select_autogen_check" />
             Autogenerate by standard resolutions select
           </label>
+          <label>
+            <input type="checkbox" name="checkboxes_autogen_check" id="checkboxes_autogen_check" checked />
+            Autogenerate by checkboxes
+          </label>
         </p>
       </div>
       <hr />
@@ -138,6 +150,7 @@
       </p>
     </footer>
 
+    <script src="./js/cli_utils.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

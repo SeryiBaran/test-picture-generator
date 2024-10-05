@@ -252,6 +252,18 @@ $("#slider_advanced_autogen_check").on("input", function () {
   slider_advanced_autogen_checked = this.checked;
 });
 
+let disable_grid = $("#disable_grid_check").is(":checked");
+$("#disable_grid_check").on("input", function () {
+  disable_grid = this.checked;
+  if (checkboxes_autogen) generate();
+});
+
+let limited_grid = $("#limited_grid_check").is(":checked");
+$("#limited_grid_check").on("input", function () {
+  limited_grid = this.checked;
+  if (checkboxes_autogen) generate();
+});
+
 let disable_maxwidth = $("#disable_maxwidth_check").is(":checked");
 $("#disable_maxwidth_check").on("input", function () {
   disable_maxwidth = this.checked;
@@ -262,13 +274,13 @@ $("#disable_maxwidth_check").on("input", function () {
 let disable_colors = $("#disable_colors_check").is(":checked");
 $("#disable_colors_check").on("input", function () {
   disable_colors = this.checked;
-  generate();
+  if (checkboxes_autogen) generate();
 });
 
 let use_bresenham_algorithms = $("#use_bresenham_algorithms_check").is(":checked");
 $("#use_bresenham_algorithms_check").on("input", function () {
   use_bresenham_algorithms = this.checked;
-  generate();
+  if (checkboxes_autogen) generate();
 });
 
 let disable_antialiasing = $("#disable_antialiasing_check").is(":checked");
@@ -283,13 +295,13 @@ let enable_antialiasing_disable_filter = $("#enable_antialiasing_disable_filter_
 );
 $("#enable_antialiasing_disable_filter_check").on("input", function () {
   enable_antialiasing_disable_filter = this.checked;
-  generate();
+  if (checkboxes_autogen) generate();
 });
 
 let only_geometry_mode = $("#only_geometry_mode_check").is(":checked");
 $("#only_geometry_mode_check").on("input", function () {
   only_geometry_mode = this.checked;
-  generate();
+  if (checkboxes_autogen) generate();
 });
 
 $("#slider_advanced_check").on("input", function () {
@@ -315,10 +327,15 @@ $("#select_autogen_check").on("input", function () {
   select_autogen_checked = this.checked;
 });
 
+let checkboxes_autogen = $("#checkboxes_autogen_check").is(":checked");
+$("#checkboxes_autogen_check").on("input", function () {
+  checkboxes_autogen = this.checked;
+});
+
 let show_site_name = $("#show_site_name_check").is(":checked");
 $("#show_site_name_check").on("input", function () {
   show_site_name = this.checked;
-  generate();
+  if (checkboxes_autogen) generate();
 });
 
 $("#width, #height").on("input", function () {
@@ -423,26 +440,72 @@ function generatePattern(workspace, width_prop, height_prop) {
       ctx.translate(-width / 2, -height / 2);
     }
 
+    function line(start_x, start_y, end_x, end_y) {
+      ctx.beginPath();
+      ctx.moveTo(start_x, start_y);
+      ctx.lineTo(end_x, end_y);
+      ctx.stroke();
+    }
+
     // Background
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, width, height);
 
     // Grid
-    ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#808080";
+    if (!disable_grid) {
+      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "#808080";
+      if (limited_grid) {
+        for (let offsetx = 0; offsetx < width / 2; offsetx += width / 10) {
+          line(
+            Math.floor(width / 2 + offsetx) + 0.5,
+            0,
+            Math.floor(width / 2 + offsetx) + 0.5,
+            height,
+          );
 
-    let offsetx = Math.floor((width % 40) / 2) + 0.5;
-    for (let x = offsetx; x < width; x += 40) {
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, height);
-      ctx.stroke();
-    }
-    let offsety = Math.floor((height % 40) / 2) + 0.5;
-    for (let y = offsety; y < height; y += 40) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(width, y);
-      ctx.stroke();
+          if (offsetx != 0) {
+            line(
+              Math.floor(width / 2 - offsetx) + 0.5,
+              0,
+              Math.floor(width / 2 - offsetx) + 0.5,
+              height,
+            );
+          }
+        }
+
+        for (let offsety = 0; offsety < height / 2; offsety += height / 10) {
+          line(
+            0,
+            Math.floor(height / 2 + offsety) + 0.5,
+            width,
+            Math.floor(height / 2 + offsety) + 0.5,
+          );
+
+          if (offsety != 0) {
+            line(
+              0,
+              Math.floor(height / 2 - offsety) + 0.5,
+              width,
+              Math.floor(height / 2 - offsety) + 0.5,
+            );
+          }
+        }
+      } else {
+        let offsetx = Math.floor((width % 40) / 2) + 0.5;
+        for (let x = offsetx; x < width; x += 40) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, height);
+          ctx.stroke();
+        }
+        let offsety = Math.floor((height % 40) / 2) + 0.5;
+        for (let y = offsety; y < height; y += 40) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(width, y);
+          ctx.stroke();
+        }
+      }
     }
 
     // Crossed lines
@@ -492,20 +555,17 @@ function generatePattern(workspace, width_prop, height_prop) {
     }
 
     // Circles
-    if (use_bresenham_algorithms) {
-      // Non-standard pixelated algorithm
-      ctx.fillStyle = disable_colors ? "#FFFFFF" : "aqua";
+    ctx.strokeStyle = disable_colors ? "#FFFFFF" : "aqua";
+    ctx.fillStyle = disable_colors ? "#FFFFFF" : "aqua";
+    let radius_step = Math.floor(Math.min(width, height) / 40) * 4;
+    for (let i = 1; i <= 4; i++) {
+      if (use_bresenham_algorithms) {
+        // Non-standard pixelated algorithm
 
-      let radius_step = Math.floor(Math.min(width, height) / 40) * 4;
-      for (let i = 1; i <= 4; i++) {
         plotCircle(Math.floor(width / 2), Math.floor(height / 2), i * radius_step);
-      }
-    } else {
-      // Standard canvas antialiased algorithm
-      ctx.strokeStyle = disable_colors ? "#FFFFFF" : "aqua";
+      } else {
+        // Standard canvas antialiased algorithm
 
-      let radius_step = Math.floor(Math.min(width, height) / 40) * 4;
-      for (let i = 1; i <= 4; i++) {
         ctx.beginPath();
         ctx.arc(
           Math.floor(width / 2) + 0.5,
@@ -545,7 +605,7 @@ function generatePattern(workspace, width_prop, height_prop) {
 
     // Center big size text
     if (!only_geometry_mode) {
-      if (!(height < 100)) {
+      if (!(width < 100 || height < 100)) {
         flip(() => {
           ctx.font =
             Math.max(11, Math.min(Math.floor(height / 12), Math.floor(width / 12))) + "px Consolas";
@@ -563,7 +623,7 @@ function generatePattern(workspace, width_prop, height_prop) {
 
     // Side small size text
     if (!only_geometry_mode) {
-      if (!(width < 100 && height < 100)) {
+      if (!(width < 100 || height < 100)) {
         flip(() => {
           ctx.font = 11 + "px Consolas";
           ctx.fillStyle = "white";
@@ -612,39 +672,3 @@ $("#go_fullscreen").on("click", function () {
 });
 
 generatePattern($("#workspace"), $("#width").val(), $("#height").val());
-
-/**
- * Generates and saves bunch of images.
- *
- * @param {number[][]} resolutions - Array of arrays with screen width and height.
- */
-function cli__downloadBunch(
-  resolutions = [
-    [400, 300],
-    [640, 360],
-    [640, 480],
-    [800, 600],
-    [1024, 768],
-    [1280, 720],
-    [1360, 768],
-    [1366, 768],
-    [1440, 900],
-    [1600, 900],
-    [1920, 1080],
-  ],
-) {
-  resolutions.forEach((resolution) => {
-    generatePattern($("#workspace"), resolution[0], resolution[1]);
-    let canvas = $("canvas")[0];
-
-    canvas.toBlob((blob) => {
-      const url = URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = generateFileName(canvas.width, canvas.height);
-      link.click();
-      URL.revokeObjectURL(url);
-    });
-  });
-}
