@@ -1,90 +1,972 @@
-* {
-	box-sizing: border-box;
+/* Generated with SeryiBaran unocss_preset_colors_to_css (unpublished) */
+/* Fri, 28 Mar 2025 07:52:24 GMT */
+
+:root {
+  --uc-inherit: inherit;
+  --uc-current: currentColor;
+  --uc-transparent: transparent;
+  --uc-black: 0, 0, 0;
+  --uc-white: 255, 255, 255;
+  --uc-rose-1: 255, 228, 230;
+  --uc-rose-2: 254, 205, 211;
+  --uc-rose-3: 253, 164, 175;
+  --uc-rose-4: 251, 113, 133;
+  --uc-rose-5: 244, 63, 94;
+  --uc-rose-6: 225, 29, 72;
+  --uc-rose-7: 190, 18, 60;
+  --uc-rose-8: 159, 18, 57;
+  --uc-rose-9: 136, 19, 55;
+  --uc-rose-50: 255, 241, 242;
+  --uc-rose-100: 255, 228, 230;
+  --uc-rose-200: 254, 205, 211;
+  --uc-rose-300: 253, 164, 175;
+  --uc-rose-400: 251, 113, 133;
+  --uc-rose-500: 244, 63, 94;
+  --uc-rose-600: 225, 29, 72;
+  --uc-rose-700: 190, 18, 60;
+  --uc-rose-800: 159, 18, 57;
+  --uc-rose-900: 136, 19, 55;
+  --uc-rose-950: 76, 5, 25;
+  --uc-rose: 251, 113, 133;
+  --uc-pink-1: 252, 231, 243;
+  --uc-pink-2: 251, 207, 232;
+  --uc-pink-3: 249, 168, 212;
+  --uc-pink-4: 244, 114, 182;
+  --uc-pink-5: 236, 72, 153;
+  --uc-pink-6: 219, 39, 119;
+  --uc-pink-7: 190, 24, 93;
+  --uc-pink-8: 157, 23, 77;
+  --uc-pink-9: 131, 24, 67;
+  --uc-pink-50: 253, 242, 248;
+  --uc-pink-100: 252, 231, 243;
+  --uc-pink-200: 251, 207, 232;
+  --uc-pink-300: 249, 168, 212;
+  --uc-pink-400: 244, 114, 182;
+  --uc-pink-500: 236, 72, 153;
+  --uc-pink-600: 219, 39, 119;
+  --uc-pink-700: 190, 24, 93;
+  --uc-pink-800: 157, 23, 77;
+  --uc-pink-900: 131, 24, 67;
+  --uc-pink-950: 80, 7, 36;
+  --uc-pink: 244, 114, 182;
+  --uc-fuchsia-1: 250, 232, 255;
+  --uc-fuchsia-2: 245, 208, 254;
+  --uc-fuchsia-3: 240, 171, 252;
+  --uc-fuchsia-4: 232, 121, 249;
+  --uc-fuchsia-5: 217, 70, 239;
+  --uc-fuchsia-6: 192, 38, 211;
+  --uc-fuchsia-7: 162, 28, 175;
+  --uc-fuchsia-8: 134, 25, 143;
+  --uc-fuchsia-9: 112, 26, 117;
+  --uc-fuchsia-50: 253, 244, 255;
+  --uc-fuchsia-100: 250, 232, 255;
+  --uc-fuchsia-200: 245, 208, 254;
+  --uc-fuchsia-300: 240, 171, 252;
+  --uc-fuchsia-400: 232, 121, 249;
+  --uc-fuchsia-500: 217, 70, 239;
+  --uc-fuchsia-600: 192, 38, 211;
+  --uc-fuchsia-700: 162, 28, 175;
+  --uc-fuchsia-800: 134, 25, 143;
+  --uc-fuchsia-900: 112, 26, 117;
+  --uc-fuchsia-950: 74, 4, 78;
+  --uc-fuchsia: 232, 121, 249;
+  --uc-purple-1: 243, 232, 255;
+  --uc-purple-2: 233, 213, 255;
+  --uc-purple-3: 216, 180, 254;
+  --uc-purple-4: 192, 132, 252;
+  --uc-purple-5: 168, 85, 247;
+  --uc-purple-6: 147, 51, 234;
+  --uc-purple-7: 126, 34, 206;
+  --uc-purple-8: 107, 33, 168;
+  --uc-purple-9: 88, 28, 135;
+  --uc-purple-50: 250, 245, 255;
+  --uc-purple-100: 243, 232, 255;
+  --uc-purple-200: 233, 213, 255;
+  --uc-purple-300: 216, 180, 254;
+  --uc-purple-400: 192, 132, 252;
+  --uc-purple-500: 168, 85, 247;
+  --uc-purple-600: 147, 51, 234;
+  --uc-purple-700: 126, 34, 206;
+  --uc-purple-800: 107, 33, 168;
+  --uc-purple-900: 88, 28, 135;
+  --uc-purple-950: 59, 7, 100;
+  --uc-purple: 192, 132, 252;
+  --uc-violet-1: 237, 233, 254;
+  --uc-violet-2: 221, 214, 254;
+  --uc-violet-3: 196, 181, 253;
+  --uc-violet-4: 167, 139, 250;
+  --uc-violet-5: 139, 92, 246;
+  --uc-violet-6: 124, 58, 237;
+  --uc-violet-7: 109, 40, 217;
+  --uc-violet-8: 91, 33, 182;
+  --uc-violet-9: 76, 29, 149;
+  --uc-violet-50: 245, 243, 255;
+  --uc-violet-100: 237, 233, 254;
+  --uc-violet-200: 221, 214, 254;
+  --uc-violet-300: 196, 181, 253;
+  --uc-violet-400: 167, 139, 250;
+  --uc-violet-500: 139, 92, 246;
+  --uc-violet-600: 124, 58, 237;
+  --uc-violet-700: 109, 40, 217;
+  --uc-violet-800: 91, 33, 182;
+  --uc-violet-900: 76, 29, 149;
+  --uc-violet-950: 46, 16, 101;
+  --uc-violet: 167, 139, 250;
+  --uc-indigo-1: 224, 231, 255;
+  --uc-indigo-2: 199, 210, 254;
+  --uc-indigo-3: 165, 180, 252;
+  --uc-indigo-4: 129, 140, 248;
+  --uc-indigo-5: 99, 102, 241;
+  --uc-indigo-6: 79, 70, 229;
+  --uc-indigo-7: 67, 56, 202;
+  --uc-indigo-8: 55, 48, 163;
+  --uc-indigo-9: 49, 46, 129;
+  --uc-indigo-50: 238, 242, 255;
+  --uc-indigo-100: 224, 231, 255;
+  --uc-indigo-200: 199, 210, 254;
+  --uc-indigo-300: 165, 180, 252;
+  --uc-indigo-400: 129, 140, 248;
+  --uc-indigo-500: 99, 102, 241;
+  --uc-indigo-600: 79, 70, 229;
+  --uc-indigo-700: 67, 56, 202;
+  --uc-indigo-800: 55, 48, 163;
+  --uc-indigo-900: 49, 46, 129;
+  --uc-indigo-950: 30, 27, 75;
+  --uc-indigo: 129, 140, 248;
+  --uc-blue-1: 219, 234, 254;
+  --uc-blue-2: 191, 219, 254;
+  --uc-blue-3: 147, 197, 253;
+  --uc-blue-4: 96, 165, 250;
+  --uc-blue-5: 59, 130, 246;
+  --uc-blue-6: 37, 99, 235;
+  --uc-blue-7: 29, 78, 216;
+  --uc-blue-8: 30, 64, 175;
+  --uc-blue-9: 30, 58, 138;
+  --uc-blue-50: 239, 246, 255;
+  --uc-blue-100: 219, 234, 254;
+  --uc-blue-200: 191, 219, 254;
+  --uc-blue-300: 147, 197, 253;
+  --uc-blue-400: 96, 165, 250;
+  --uc-blue-500: 59, 130, 246;
+  --uc-blue-600: 37, 99, 235;
+  --uc-blue-700: 29, 78, 216;
+  --uc-blue-800: 30, 64, 175;
+  --uc-blue-900: 30, 58, 138;
+  --uc-blue-950: 23, 37, 84;
+  --uc-blue: 96, 165, 250;
+  --uc-sky-1: 224, 242, 254;
+  --uc-sky-2: 186, 230, 253;
+  --uc-sky-3: 125, 211, 252;
+  --uc-sky-4: 56, 189, 248;
+  --uc-sky-5: 14, 165, 233;
+  --uc-sky-6: 2, 132, 199;
+  --uc-sky-7: 3, 105, 161;
+  --uc-sky-8: 7, 89, 133;
+  --uc-sky-9: 12, 74, 110;
+  --uc-sky-50: 240, 249, 255;
+  --uc-sky-100: 224, 242, 254;
+  --uc-sky-200: 186, 230, 253;
+  --uc-sky-300: 125, 211, 252;
+  --uc-sky-400: 56, 189, 248;
+  --uc-sky-500: 14, 165, 233;
+  --uc-sky-600: 2, 132, 199;
+  --uc-sky-700: 3, 105, 161;
+  --uc-sky-800: 7, 89, 133;
+  --uc-sky-900: 12, 74, 110;
+  --uc-sky-950: 8, 47, 73;
+  --uc-sky: 56, 189, 248;
+  --uc-cyan-1: 207, 250, 254;
+  --uc-cyan-2: 165, 243, 252;
+  --uc-cyan-3: 103, 232, 249;
+  --uc-cyan-4: 34, 211, 238;
+  --uc-cyan-5: 6, 182, 212;
+  --uc-cyan-6: 8, 145, 178;
+  --uc-cyan-7: 14, 116, 144;
+  --uc-cyan-8: 21, 94, 117;
+  --uc-cyan-9: 22, 78, 99;
+  --uc-cyan-50: 236, 254, 255;
+  --uc-cyan-100: 207, 250, 254;
+  --uc-cyan-200: 165, 243, 252;
+  --uc-cyan-300: 103, 232, 249;
+  --uc-cyan-400: 34, 211, 238;
+  --uc-cyan-500: 6, 182, 212;
+  --uc-cyan-600: 8, 145, 178;
+  --uc-cyan-700: 14, 116, 144;
+  --uc-cyan-800: 21, 94, 117;
+  --uc-cyan-900: 22, 78, 99;
+  --uc-cyan-950: 8, 51, 68;
+  --uc-cyan: 34, 211, 238;
+  --uc-teal-1: 204, 251, 241;
+  --uc-teal-2: 153, 246, 228;
+  --uc-teal-3: 94, 234, 212;
+  --uc-teal-4: 45, 212, 191;
+  --uc-teal-5: 20, 184, 166;
+  --uc-teal-6: 13, 148, 136;
+  --uc-teal-7: 15, 118, 110;
+  --uc-teal-8: 17, 94, 89;
+  --uc-teal-9: 19, 78, 74;
+  --uc-teal-50: 240, 253, 250;
+  --uc-teal-100: 204, 251, 241;
+  --uc-teal-200: 153, 246, 228;
+  --uc-teal-300: 94, 234, 212;
+  --uc-teal-400: 45, 212, 191;
+  --uc-teal-500: 20, 184, 166;
+  --uc-teal-600: 13, 148, 136;
+  --uc-teal-700: 15, 118, 110;
+  --uc-teal-800: 17, 94, 89;
+  --uc-teal-900: 19, 78, 74;
+  --uc-teal-950: 4, 47, 46;
+  --uc-teal: 45, 212, 191;
+  --uc-emerald-1: 209, 250, 229;
+  --uc-emerald-2: 167, 243, 208;
+  --uc-emerald-3: 110, 231, 183;
+  --uc-emerald-4: 52, 211, 153;
+  --uc-emerald-5: 16, 185, 129;
+  --uc-emerald-6: 5, 150, 105;
+  --uc-emerald-7: 4, 120, 87;
+  --uc-emerald-8: 6, 95, 70;
+  --uc-emerald-9: 6, 78, 59;
+  --uc-emerald-50: 236, 253, 245;
+  --uc-emerald-100: 209, 250, 229;
+  --uc-emerald-200: 167, 243, 208;
+  --uc-emerald-300: 110, 231, 183;
+  --uc-emerald-400: 52, 211, 153;
+  --uc-emerald-500: 16, 185, 129;
+  --uc-emerald-600: 5, 150, 105;
+  --uc-emerald-700: 4, 120, 87;
+  --uc-emerald-800: 6, 95, 70;
+  --uc-emerald-900: 6, 78, 59;
+  --uc-emerald-950: 2, 44, 34;
+  --uc-emerald: 52, 211, 153;
+  --uc-green-1: 220, 252, 231;
+  --uc-green-2: 187, 247, 208;
+  --uc-green-3: 134, 239, 172;
+  --uc-green-4: 74, 222, 128;
+  --uc-green-5: 34, 197, 94;
+  --uc-green-6: 22, 163, 74;
+  --uc-green-7: 21, 128, 61;
+  --uc-green-8: 22, 101, 52;
+  --uc-green-9: 20, 83, 45;
+  --uc-green-50: 240, 253, 244;
+  --uc-green-100: 220, 252, 231;
+  --uc-green-200: 187, 247, 208;
+  --uc-green-300: 134, 239, 172;
+  --uc-green-400: 74, 222, 128;
+  --uc-green-500: 34, 197, 94;
+  --uc-green-600: 22, 163, 74;
+  --uc-green-700: 21, 128, 61;
+  --uc-green-800: 22, 101, 52;
+  --uc-green-900: 20, 83, 45;
+  --uc-green-950: 5, 46, 22;
+  --uc-green: 74, 222, 128;
+  --uc-lime-1: 236, 252, 203;
+  --uc-lime-2: 217, 249, 157;
+  --uc-lime-3: 190, 242, 100;
+  --uc-lime-4: 163, 230, 53;
+  --uc-lime-5: 132, 204, 22;
+  --uc-lime-6: 101, 163, 13;
+  --uc-lime-7: 77, 124, 15;
+  --uc-lime-8: 63, 98, 18;
+  --uc-lime-9: 54, 83, 20;
+  --uc-lime-50: 247, 254, 231;
+  --uc-lime-100: 236, 252, 203;
+  --uc-lime-200: 217, 249, 157;
+  --uc-lime-300: 190, 242, 100;
+  --uc-lime-400: 163, 230, 53;
+  --uc-lime-500: 132, 204, 22;
+  --uc-lime-600: 101, 163, 13;
+  --uc-lime-700: 77, 124, 15;
+  --uc-lime-800: 63, 98, 18;
+  --uc-lime-900: 54, 83, 20;
+  --uc-lime-950: 26, 46, 5;
+  --uc-lime: 163, 230, 53;
+  --uc-yellow-1: 254, 249, 195;
+  --uc-yellow-2: 254, 240, 138;
+  --uc-yellow-3: 253, 224, 71;
+  --uc-yellow-4: 250, 204, 21;
+  --uc-yellow-5: 234, 179, 8;
+  --uc-yellow-6: 202, 138, 4;
+  --uc-yellow-7: 161, 98, 7;
+  --uc-yellow-8: 133, 77, 14;
+  --uc-yellow-9: 113, 63, 18;
+  --uc-yellow-50: 254, 252, 232;
+  --uc-yellow-100: 254, 249, 195;
+  --uc-yellow-200: 254, 240, 138;
+  --uc-yellow-300: 253, 224, 71;
+  --uc-yellow-400: 250, 204, 21;
+  --uc-yellow-500: 234, 179, 8;
+  --uc-yellow-600: 202, 138, 4;
+  --uc-yellow-700: 161, 98, 7;
+  --uc-yellow-800: 133, 77, 14;
+  --uc-yellow-900: 113, 63, 18;
+  --uc-yellow-950: 66, 32, 6;
+  --uc-yellow: 250, 204, 21;
+  --uc-amber-1: 254, 243, 199;
+  --uc-amber-2: 253, 230, 138;
+  --uc-amber-3: 252, 211, 77;
+  --uc-amber-4: 251, 191, 36;
+  --uc-amber-5: 245, 158, 11;
+  --uc-amber-6: 217, 119, 6;
+  --uc-amber-7: 180, 83, 9;
+  --uc-amber-8: 146, 64, 14;
+  --uc-amber-9: 120, 53, 15;
+  --uc-amber-50: 255, 251, 235;
+  --uc-amber-100: 254, 243, 199;
+  --uc-amber-200: 253, 230, 138;
+  --uc-amber-300: 252, 211, 77;
+  --uc-amber-400: 251, 191, 36;
+  --uc-amber-500: 245, 158, 11;
+  --uc-amber-600: 217, 119, 6;
+  --uc-amber-700: 180, 83, 9;
+  --uc-amber-800: 146, 64, 14;
+  --uc-amber-900: 120, 53, 15;
+  --uc-amber-950: 69, 26, 3;
+  --uc-amber: 251, 191, 36;
+  --uc-orange-1: 255, 237, 213;
+  --uc-orange-2: 254, 215, 170;
+  --uc-orange-3: 253, 186, 116;
+  --uc-orange-4: 251, 146, 60;
+  --uc-orange-5: 249, 115, 22;
+  --uc-orange-6: 234, 88, 12;
+  --uc-orange-7: 194, 65, 12;
+  --uc-orange-8: 154, 52, 18;
+  --uc-orange-9: 124, 45, 18;
+  --uc-orange-50: 255, 247, 237;
+  --uc-orange-100: 255, 237, 213;
+  --uc-orange-200: 254, 215, 170;
+  --uc-orange-300: 253, 186, 116;
+  --uc-orange-400: 251, 146, 60;
+  --uc-orange-500: 249, 115, 22;
+  --uc-orange-600: 234, 88, 12;
+  --uc-orange-700: 194, 65, 12;
+  --uc-orange-800: 154, 52, 18;
+  --uc-orange-900: 124, 45, 18;
+  --uc-orange-950: 67, 20, 7;
+  --uc-orange: 251, 146, 60;
+  --uc-red-1: 254, 226, 226;
+  --uc-red-2: 254, 202, 202;
+  --uc-red-3: 252, 165, 165;
+  --uc-red-4: 248, 113, 113;
+  --uc-red-5: 239, 68, 68;
+  --uc-red-6: 220, 38, 38;
+  --uc-red-7: 185, 28, 28;
+  --uc-red-8: 153, 27, 27;
+  --uc-red-9: 127, 29, 29;
+  --uc-red-50: 254, 242, 242;
+  --uc-red-100: 254, 226, 226;
+  --uc-red-200: 254, 202, 202;
+  --uc-red-300: 252, 165, 165;
+  --uc-red-400: 248, 113, 113;
+  --uc-red-500: 239, 68, 68;
+  --uc-red-600: 220, 38, 38;
+  --uc-red-700: 185, 28, 28;
+  --uc-red-800: 153, 27, 27;
+  --uc-red-900: 127, 29, 29;
+  --uc-red-950: 69, 10, 10;
+  --uc-red: 248, 113, 113;
+  --uc-gray-1: 243, 244, 246;
+  --uc-gray-2: 229, 231, 235;
+  --uc-gray-3: 209, 213, 219;
+  --uc-gray-4: 156, 163, 175;
+  --uc-gray-5: 107, 114, 128;
+  --uc-gray-6: 75, 85, 99;
+  --uc-gray-7: 55, 65, 81;
+  --uc-gray-8: 31, 41, 55;
+  --uc-gray-9: 17, 24, 39;
+  --uc-gray-50: 249, 250, 251;
+  --uc-gray-100: 243, 244, 246;
+  --uc-gray-200: 229, 231, 235;
+  --uc-gray-300: 209, 213, 219;
+  --uc-gray-400: 156, 163, 175;
+  --uc-gray-500: 107, 114, 128;
+  --uc-gray-600: 75, 85, 99;
+  --uc-gray-700: 55, 65, 81;
+  --uc-gray-800: 31, 41, 55;
+  --uc-gray-900: 17, 24, 39;
+  --uc-gray-950: 3, 7, 18;
+  --uc-gray: 156, 163, 175;
+  --uc-slate-1: 241, 245, 249;
+  --uc-slate-2: 226, 232, 240;
+  --uc-slate-3: 203, 213, 225;
+  --uc-slate-4: 148, 163, 184;
+  --uc-slate-5: 100, 116, 139;
+  --uc-slate-6: 71, 85, 105;
+  --uc-slate-7: 51, 65, 85;
+  --uc-slate-8: 30, 41, 59;
+  --uc-slate-9: 15, 23, 42;
+  --uc-slate-50: 248, 250, 252;
+  --uc-slate-100: 241, 245, 249;
+  --uc-slate-200: 226, 232, 240;
+  --uc-slate-300: 203, 213, 225;
+  --uc-slate-400: 148, 163, 184;
+  --uc-slate-500: 100, 116, 139;
+  --uc-slate-600: 71, 85, 105;
+  --uc-slate-700: 51, 65, 85;
+  --uc-slate-800: 30, 41, 59;
+  --uc-slate-900: 15, 23, 42;
+  --uc-slate-950: 2, 6, 23;
+  --uc-slate: 148, 163, 184;
+  --uc-zinc-1: 244, 244, 245;
+  --uc-zinc-2: 228, 228, 231;
+  --uc-zinc-3: 212, 212, 216;
+  --uc-zinc-4: 161, 161, 170;
+  --uc-zinc-5: 113, 113, 122;
+  --uc-zinc-6: 82, 82, 91;
+  --uc-zinc-7: 63, 63, 70;
+  --uc-zinc-8: 39, 39, 42;
+  --uc-zinc-9: 24, 24, 27;
+  --uc-zinc-50: 250, 250, 250;
+  --uc-zinc-100: 244, 244, 245;
+  --uc-zinc-200: 228, 228, 231;
+  --uc-zinc-300: 212, 212, 216;
+  --uc-zinc-400: 161, 161, 170;
+  --uc-zinc-500: 113, 113, 122;
+  --uc-zinc-600: 82, 82, 91;
+  --uc-zinc-700: 63, 63, 70;
+  --uc-zinc-800: 39, 39, 42;
+  --uc-zinc-900: 24, 24, 27;
+  --uc-zinc-950: 9, 9, 11;
+  --uc-zinc: 161, 161, 170;
+  --uc-neutral-1: 245, 245, 245;
+  --uc-neutral-2: 229, 229, 229;
+  --uc-neutral-3: 212, 212, 212;
+  --uc-neutral-4: 163, 163, 163;
+  --uc-neutral-5: 115, 115, 115;
+  --uc-neutral-6: 82, 82, 82;
+  --uc-neutral-7: 64, 64, 64;
+  --uc-neutral-8: 38, 38, 38;
+  --uc-neutral-9: 23, 23, 23;
+  --uc-neutral-50: 250, 250, 250;
+  --uc-neutral-100: 245, 245, 245;
+  --uc-neutral-200: 229, 229, 229;
+  --uc-neutral-300: 212, 212, 212;
+  --uc-neutral-400: 163, 163, 163;
+  --uc-neutral-500: 115, 115, 115;
+  --uc-neutral-600: 82, 82, 82;
+  --uc-neutral-700: 64, 64, 64;
+  --uc-neutral-800: 38, 38, 38;
+  --uc-neutral-900: 23, 23, 23;
+  --uc-neutral-950: 10, 10, 10;
+  --uc-neutral: 163, 163, 163;
+  --uc-stone-1: 245, 245, 244;
+  --uc-stone-2: 231, 229, 228;
+  --uc-stone-3: 214, 211, 209;
+  --uc-stone-4: 168, 162, 158;
+  --uc-stone-5: 120, 113, 108;
+  --uc-stone-6: 87, 83, 78;
+  --uc-stone-7: 68, 64, 60;
+  --uc-stone-8: 41, 37, 36;
+  --uc-stone-9: 28, 25, 23;
+  --uc-stone-50: 250, 250, 249;
+  --uc-stone-100: 245, 245, 244;
+  --uc-stone-200: 231, 229, 228;
+  --uc-stone-300: 214, 211, 209;
+  --uc-stone-400: 168, 162, 158;
+  --uc-stone-500: 120, 113, 108;
+  --uc-stone-600: 87, 83, 78;
+  --uc-stone-700: 68, 64, 60;
+  --uc-stone-800: 41, 37, 36;
+  --uc-stone-900: 28, 25, 23;
+  --uc-stone-950: 12, 10, 9;
+  --uc-stone: 168, 162, 158;
+  --uc-light-1: 252, 252, 252;
+  --uc-light-2: 250, 250, 250;
+  --uc-light-3: 248, 249, 250;
+  --uc-light-4: 246, 246, 246;
+  --uc-light-5: 242, 242, 242;
+  --uc-light-6: 241, 243, 245;
+  --uc-light-7: 233, 236, 239;
+  --uc-light-8: 222, 226, 230;
+  --uc-light-9: 221, 225, 227;
+  --uc-light-50: 253, 253, 253;
+  --uc-light-100: 252, 252, 252;
+  --uc-light-200: 250, 250, 250;
+  --uc-light-300: 248, 249, 250;
+  --uc-light-400: 246, 246, 246;
+  --uc-light-500: 242, 242, 242;
+  --uc-light-600: 241, 243, 245;
+  --uc-light-700: 233, 236, 239;
+  --uc-light-800: 222, 226, 230;
+  --uc-light-900: 221, 225, 227;
+  --uc-light-950: 216, 220, 223;
+  --uc-light: 246, 246, 246;
+  --uc-dark-1: 60, 60, 60;
+  --uc-dark-2: 50, 50, 50;
+  --uc-dark-3: 45, 45, 45;
+  --uc-dark-4: 34, 34, 34;
+  --uc-dark-5: 31, 31, 31;
+  --uc-dark-6: 28, 28, 30;
+  --uc-dark-7: 27, 27, 27;
+  --uc-dark-8: 24, 24, 24;
+  --uc-dark-9: 15, 15, 15;
+  --uc-dark-50: 74, 74, 74;
+  --uc-dark-100: 60, 60, 60;
+  --uc-dark-200: 50, 50, 50;
+  --uc-dark-300: 45, 45, 45;
+  --uc-dark-400: 34, 34, 34;
+  --uc-dark-500: 31, 31, 31;
+  --uc-dark-600: 28, 28, 30;
+  --uc-dark-700: 27, 27, 27;
+  --uc-dark-800: 24, 24, 24;
+  --uc-dark-900: 15, 15, 15;
+  --uc-dark-950: 8, 8, 8;
+  --uc-dark: 34, 34, 34;
+  --uc-lightblue-1: 224, 242, 254;
+  --uc-lightblue-2: 186, 230, 253;
+  --uc-lightblue-3: 125, 211, 252;
+  --uc-lightblue-4: 56, 189, 248;
+  --uc-lightblue-5: 14, 165, 233;
+  --uc-lightblue-6: 2, 132, 199;
+  --uc-lightblue-7: 3, 105, 161;
+  --uc-lightblue-8: 7, 89, 133;
+  --uc-lightblue-9: 12, 74, 110;
+  --uc-lightblue-50: 240, 249, 255;
+  --uc-lightblue-100: 224, 242, 254;
+  --uc-lightblue-200: 186, 230, 253;
+  --uc-lightblue-300: 125, 211, 252;
+  --uc-lightblue-400: 56, 189, 248;
+  --uc-lightblue-500: 14, 165, 233;
+  --uc-lightblue-600: 2, 132, 199;
+  --uc-lightblue-700: 3, 105, 161;
+  --uc-lightblue-800: 7, 89, 133;
+  --uc-lightblue-900: 12, 74, 110;
+  --uc-lightblue-950: 8, 47, 73;
+  --uc-lightblue: 56, 189, 248;
+  --uc-lightBlue-1: 224, 242, 254;
+  --uc-lightBlue-2: 186, 230, 253;
+  --uc-lightBlue-3: 125, 211, 252;
+  --uc-lightBlue-4: 56, 189, 248;
+  --uc-lightBlue-5: 14, 165, 233;
+  --uc-lightBlue-6: 2, 132, 199;
+  --uc-lightBlue-7: 3, 105, 161;
+  --uc-lightBlue-8: 7, 89, 133;
+  --uc-lightBlue-9: 12, 74, 110;
+  --uc-lightBlue-50: 240, 249, 255;
+  --uc-lightBlue-100: 224, 242, 254;
+  --uc-lightBlue-200: 186, 230, 253;
+  --uc-lightBlue-300: 125, 211, 252;
+  --uc-lightBlue-400: 56, 189, 248;
+  --uc-lightBlue-500: 14, 165, 233;
+  --uc-lightBlue-600: 2, 132, 199;
+  --uc-lightBlue-700: 3, 105, 161;
+  --uc-lightBlue-800: 7, 89, 133;
+  --uc-lightBlue-900: 12, 74, 110;
+  --uc-lightBlue-950: 8, 47, 73;
+  --uc-lightBlue: 56, 189, 248;
+  --uc-warmgray-1: 245, 245, 244;
+  --uc-warmgray-2: 231, 229, 228;
+  --uc-warmgray-3: 214, 211, 209;
+  --uc-warmgray-4: 168, 162, 158;
+  --uc-warmgray-5: 120, 113, 108;
+  --uc-warmgray-6: 87, 83, 78;
+  --uc-warmgray-7: 68, 64, 60;
+  --uc-warmgray-8: 41, 37, 36;
+  --uc-warmgray-9: 28, 25, 23;
+  --uc-warmgray-50: 250, 250, 249;
+  --uc-warmgray-100: 245, 245, 244;
+  --uc-warmgray-200: 231, 229, 228;
+  --uc-warmgray-300: 214, 211, 209;
+  --uc-warmgray-400: 168, 162, 158;
+  --uc-warmgray-500: 120, 113, 108;
+  --uc-warmgray-600: 87, 83, 78;
+  --uc-warmgray-700: 68, 64, 60;
+  --uc-warmgray-800: 41, 37, 36;
+  --uc-warmgray-900: 28, 25, 23;
+  --uc-warmgray-950: 12, 10, 9;
+  --uc-warmgray: 168, 162, 158;
+  --uc-warmGray-1: 245, 245, 244;
+  --uc-warmGray-2: 231, 229, 228;
+  --uc-warmGray-3: 214, 211, 209;
+  --uc-warmGray-4: 168, 162, 158;
+  --uc-warmGray-5: 120, 113, 108;
+  --uc-warmGray-6: 87, 83, 78;
+  --uc-warmGray-7: 68, 64, 60;
+  --uc-warmGray-8: 41, 37, 36;
+  --uc-warmGray-9: 28, 25, 23;
+  --uc-warmGray-50: 250, 250, 249;
+  --uc-warmGray-100: 245, 245, 244;
+  --uc-warmGray-200: 231, 229, 228;
+  --uc-warmGray-300: 214, 211, 209;
+  --uc-warmGray-400: 168, 162, 158;
+  --uc-warmGray-500: 120, 113, 108;
+  --uc-warmGray-600: 87, 83, 78;
+  --uc-warmGray-700: 68, 64, 60;
+  --uc-warmGray-800: 41, 37, 36;
+  --uc-warmGray-900: 28, 25, 23;
+  --uc-warmGray-950: 12, 10, 9;
+  --uc-warmGray: 168, 162, 158;
+  --uc-truegray-1: 245, 245, 245;
+  --uc-truegray-2: 229, 229, 229;
+  --uc-truegray-3: 212, 212, 212;
+  --uc-truegray-4: 163, 163, 163;
+  --uc-truegray-5: 115, 115, 115;
+  --uc-truegray-6: 82, 82, 82;
+  --uc-truegray-7: 64, 64, 64;
+  --uc-truegray-8: 38, 38, 38;
+  --uc-truegray-9: 23, 23, 23;
+  --uc-truegray-50: 250, 250, 250;
+  --uc-truegray-100: 245, 245, 245;
+  --uc-truegray-200: 229, 229, 229;
+  --uc-truegray-300: 212, 212, 212;
+  --uc-truegray-400: 163, 163, 163;
+  --uc-truegray-500: 115, 115, 115;
+  --uc-truegray-600: 82, 82, 82;
+  --uc-truegray-700: 64, 64, 64;
+  --uc-truegray-800: 38, 38, 38;
+  --uc-truegray-900: 23, 23, 23;
+  --uc-truegray-950: 10, 10, 10;
+  --uc-truegray: 163, 163, 163;
+  --uc-trueGray-1: 245, 245, 245;
+  --uc-trueGray-2: 229, 229, 229;
+  --uc-trueGray-3: 212, 212, 212;
+  --uc-trueGray-4: 163, 163, 163;
+  --uc-trueGray-5: 115, 115, 115;
+  --uc-trueGray-6: 82, 82, 82;
+  --uc-trueGray-7: 64, 64, 64;
+  --uc-trueGray-8: 38, 38, 38;
+  --uc-trueGray-9: 23, 23, 23;
+  --uc-trueGray-50: 250, 250, 250;
+  --uc-trueGray-100: 245, 245, 245;
+  --uc-trueGray-200: 229, 229, 229;
+  --uc-trueGray-300: 212, 212, 212;
+  --uc-trueGray-400: 163, 163, 163;
+  --uc-trueGray-500: 115, 115, 115;
+  --uc-trueGray-600: 82, 82, 82;
+  --uc-trueGray-700: 64, 64, 64;
+  --uc-trueGray-800: 38, 38, 38;
+  --uc-trueGray-900: 23, 23, 23;
+  --uc-trueGray-950: 10, 10, 10;
+  --uc-trueGray: 163, 163, 163;
+  --uc-coolgray-1: 243, 244, 246;
+  --uc-coolgray-2: 229, 231, 235;
+  --uc-coolgray-3: 209, 213, 219;
+  --uc-coolgray-4: 156, 163, 175;
+  --uc-coolgray-5: 107, 114, 128;
+  --uc-coolgray-6: 75, 85, 99;
+  --uc-coolgray-7: 55, 65, 81;
+  --uc-coolgray-8: 31, 41, 55;
+  --uc-coolgray-9: 17, 24, 39;
+  --uc-coolgray-50: 249, 250, 251;
+  --uc-coolgray-100: 243, 244, 246;
+  --uc-coolgray-200: 229, 231, 235;
+  --uc-coolgray-300: 209, 213, 219;
+  --uc-coolgray-400: 156, 163, 175;
+  --uc-coolgray-500: 107, 114, 128;
+  --uc-coolgray-600: 75, 85, 99;
+  --uc-coolgray-700: 55, 65, 81;
+  --uc-coolgray-800: 31, 41, 55;
+  --uc-coolgray-900: 17, 24, 39;
+  --uc-coolgray-950: 3, 7, 18;
+  --uc-coolgray: 156, 163, 175;
+  --uc-coolGray-1: 243, 244, 246;
+  --uc-coolGray-2: 229, 231, 235;
+  --uc-coolGray-3: 209, 213, 219;
+  --uc-coolGray-4: 156, 163, 175;
+  --uc-coolGray-5: 107, 114, 128;
+  --uc-coolGray-6: 75, 85, 99;
+  --uc-coolGray-7: 55, 65, 81;
+  --uc-coolGray-8: 31, 41, 55;
+  --uc-coolGray-9: 17, 24, 39;
+  --uc-coolGray-50: 249, 250, 251;
+  --uc-coolGray-100: 243, 244, 246;
+  --uc-coolGray-200: 229, 231, 235;
+  --uc-coolGray-300: 209, 213, 219;
+  --uc-coolGray-400: 156, 163, 175;
+  --uc-coolGray-500: 107, 114, 128;
+  --uc-coolGray-600: 75, 85, 99;
+  --uc-coolGray-700: 55, 65, 81;
+  --uc-coolGray-800: 31, 41, 55;
+  --uc-coolGray-900: 17, 24, 39;
+  --uc-coolGray-950: 3, 7, 18;
+  --uc-coolGray: 156, 163, 175;
+  --uc-bluegray-1: 241, 245, 249;
+  --uc-bluegray-2: 226, 232, 240;
+  --uc-bluegray-3: 203, 213, 225;
+  --uc-bluegray-4: 148, 163, 184;
+  --uc-bluegray-5: 100, 116, 139;
+  --uc-bluegray-6: 71, 85, 105;
+  --uc-bluegray-7: 51, 65, 85;
+  --uc-bluegray-8: 30, 41, 59;
+  --uc-bluegray-9: 15, 23, 42;
+  --uc-bluegray-50: 248, 250, 252;
+  --uc-bluegray-100: 241, 245, 249;
+  --uc-bluegray-200: 226, 232, 240;
+  --uc-bluegray-300: 203, 213, 225;
+  --uc-bluegray-400: 148, 163, 184;
+  --uc-bluegray-500: 100, 116, 139;
+  --uc-bluegray-600: 71, 85, 105;
+  --uc-bluegray-700: 51, 65, 85;
+  --uc-bluegray-800: 30, 41, 59;
+  --uc-bluegray-900: 15, 23, 42;
+  --uc-bluegray-950: 2, 6, 23;
+  --uc-bluegray: 148, 163, 184;
+  --uc-blueGray-1: 241, 245, 249;
+  --uc-blueGray-2: 226, 232, 240;
+  --uc-blueGray-3: 203, 213, 225;
+  --uc-blueGray-4: 148, 163, 184;
+  --uc-blueGray-5: 100, 116, 139;
+  --uc-blueGray-6: 71, 85, 105;
+  --uc-blueGray-7: 51, 65, 85;
+  --uc-blueGray-8: 30, 41, 59;
+  --uc-blueGray-9: 15, 23, 42;
+  --uc-blueGray-50: 248, 250, 252;
+  --uc-blueGray-100: 241, 245, 249;
+  --uc-blueGray-200: 226, 232, 240;
+  --uc-blueGray-300: 203, 213, 225;
+  --uc-blueGray-400: 148, 163, 184;
+  --uc-blueGray-500: 100, 116, 139;
+  --uc-blueGray-600: 71, 85, 105;
+  --uc-blueGray-700: 51, 65, 85;
+  --uc-blueGray-800: 30, 41, 59;
+  --uc-blueGray-900: 15, 23, 42;
+  --uc-blueGray-950: 2, 6, 23;
+  --uc-blueGray: 148, 163, 184;
+}
+
+html,
+body,
+.wrapper {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  min-height: 100vh;
 }
 
 body {
-	background: MintCream;
-	text-align: center;
+  background-color: rgb(var(--uc-light-500));
 }
 
-form, #workspace, footer {
-	margin: 30px;
+.wrapper {
+  padding: 8px;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
-form, footer {
-	max-width: 640px;
-	margin-left: auto;
-	margin-right: auto;
+h1 {
+  text-align: center;
 }
 
-#workspace.antialiasing_disabled canvas {
-	image-rendering: pixelated; image-rendering: crisp-edges;
+p {
+  margin-top: 1rem;
 }
 
-#workspace:not(.maxwidth_disabled) canvas {
-	max-width: 100%;
+.description {
+  text-align: center;
 }
 
-.config {
-	text-align: start;
-	max-width: 250px;
-	margin-left: auto;
-	margin-right: auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr;
-	gap: 4px 4px;
-	grid-template-areas:
-		"standard_resolutions standard_resolutions"
-		"width_label width_input"
-		"height_label height_input"
-		"generate generate"
-		"generate_current_resolution quick_test"
-		"download download"
-		"go_fullscreen go_fullscreen";
-}
-
-#standard_resolutions { grid-area: standard_resolutions; }
-.width_label { grid-area: width_label; }
-.width_input { grid-area: width_input; }
-.height_label { grid-area: height_label; }
-.height_input { grid-area: height_input; }
-#generate { grid-area: generate; }
-#generate_current_resolution { grid-area: generate_current_resolution; }
-#quick_test { grid-area: quick_test; }
-#download { grid-area: download; }
-#go_fullscreen { grid-area: go_fullscreen; }
-
-.advanced_checkboxes {
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	width: max-content;
-	text-align: start;
+a.button {
+  text-decoration: none;
 }
 
 .button {
-	display: inline-block;
-	border: 1px solid #444;
-	border-radius: 2px;
-	background-color: #F0F0F0;
-	padding: 0.6em 1em;
-	text-decoration: none;
-	color: inherit;
-	cursor: pointer;
-	font-family: inherit;
-	font-size: 0.9em;
-	text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  font-size: 0.9em;
+  font-family: inherit;
+
+  text-align: center;
+  padding: 12px 22px;
+
+  color: #fff;
+
+  background-color: rgb(var(--uc-indigo-500));
+
+  cursor: pointer;
 }
 
 .button:hover {
-	background-color: #FAFAFA;
+  background-color: rgb(var(--uc-indigo-600));
 }
 
 .button:active {
-	background-color: #E6E6E6;
+  background-color: rgb(var(--uc-indigo-500));
 }
 
-.credits {
-	font-size: 0.9em;
+input:not([type="checkbox"]),
+select,
+.button {
+  transition-property: background-color, outline-width, outline-color;
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+
+  border: none;
+  border-radius: 6px;
+
+  outline: rgba(var(--uc-indigo-600), 50%) solid 0px;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input:not([type="checkbox"]),
+select {
+  width: 100%;
+  padding: 12px 16px;
+
+  background-color: rgba(var(--uc-indigo-600), 10%);
+  border: transparent solid 1px;
+}
+
+input:not([type="checkbox"]):focus,
+select:focus,
+.button:focus {
+  outline-width: 4px;
+}
+
+input:not([type="checkbox"]):hover,
+input:not([type="checkbox"]):focus,
+select:hover,
+select:focus {
+  border-color: rgba(var(--uc-indigo-300), 100%);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: rgba(var(--uc-indigo-600), 100%) solid 1px;
+  margin: 32px 0;
+}
+
+@media (min-width: 1024px) {
+  form {
+    flex-direction: row;
+  }
+}
+
+.config {
+  text-align: start;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#quick_test {
+  font-size: 3em;
+}
+
+#sizeConfig {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+#workspace.antialiasing_disabled canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#workspace:not(.maxwidth_disabled) canvas {
+  max-width: 100%;
+}
+
+.checkbox_label {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.2em;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox_input {
+  position: absolute;
+  appearance: none;
+  top: -9999px;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.checkbox_box {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 2px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  transition-property: background-color, outline-width, outline-color;
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+
+  border: none;
+  border-radius: 5px;
+
+  outline: rgba(var(--uc-indigo-600), 50%) solid 0px;
+  border: transparent solid 1px;
+}
+
+.checkbox_input:not(:checked) + .checkbox_box {
+  border-color: rgb(var(--uc-indigo-300));
+}
+
+.checkbox_input:checked + .checkbox_box {
+  background-color: rgb(var(--uc-indigo-500));
+  background-image: url("/assets/TablerCheck.svg");
+  background-position: center;
+  background-size: contain;
+}
+
+.checkbox_label:focus .checkbox_box,
+.checkbox_input:focus + .checkbox_box,
+.checkbox_box:focus {
+  outline-width: 4px;
+}
+
+.checkbox_input:checked:disabled + .checkbox_box {
+  background-color: #9b9b9b;
+}
+
+.advanced_checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.advanced_check_label .checkbox_input + .advanced_check_button {
+  width: 100%;
+}
+
+.advanced_check_label .checkbox_input + .advanced_check_button svg {
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.advanced_check_label .checkbox_input:checked + .advanced_check_button svg {
+  transform: rotateZ(90deg);
+}
+
+.sliders {
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+.sliders label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliders input {
+  flex-grow: 1;
 }
