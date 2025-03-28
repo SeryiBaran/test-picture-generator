@@ -970,3 +970,7 @@ form {
 .sliders input {
   flex-grow: 1;
 }
+
+#workspace {
+  text-align: center;
+}
